@@ -29,15 +29,15 @@ In this project we consider the following images as inappropriate:
     http://127.0.0.1:5000/Extension.zip
 
 4- Extract the extension and add it to the chrome.
-   ![alt text] (https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture1.PNG)
-   ![alt text] (https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture2.PNG)
+   ![alt text](https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/blob/15e488b47dbf4d48ab9001295bf9d1a3ca79f863/images/Capture1.PNG)
+   ![alt text](https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture2.PNG)
 
 5- After adding extension to the chrome enable the extension.
-   ![alt text] (https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture3.PNG)
+   ![alt text](https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture3.PNG)
 
 6- Now Whenever you search something in the chrome it will blur whole page initially after some time it will blur those areas that contian inappropriate images.
-   ![alt text] (https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture4.PNG)
-   ![alt text] (https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture5.PNG)
+   ![alt text](https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture4.PNG)
+   ![alt text](https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/tree/main/images/Capture5.PNG)
 
 
 **NOTE**: Model accuracy is about *86%* and there are some images that might be not in-appropriate images but getting blur.
