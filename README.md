@@ -42,6 +42,7 @@ In this project we consider the following images as inappropriate:
    
 
 6- Now Whenever you search something in the chrome it will blur whole page initially after some time it will blur those areas that contian inappropriate images.
+
    ![alt text](https://github.com/MuhammadTayyab-SE/inappropriate-image-detection/blob/97d7737731b556593c8e420739c3004aea662a37/images/Capture4.PNG)
    
    then
