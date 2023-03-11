@@ -13,6 +13,7 @@ from flask_cors import CORS
 from colorama import Fore
 import random
 from keras.models import load_model
+import cv2
 
 # for sending emails
 import os
@@ -26,7 +27,7 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # load the model
-model = load_model(r"model.h5")
+model = load_model(r"./inception_model.h5")
 
 # email api key
 SENDGRID_API_KEY = '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'
@@ -49,7 +50,7 @@ def download():
 @app.route('/predict', methods=['GET', 'POST'])
 def make_prediction():
     try:
-        
+
         url = request.form['lnk']
         url = base64.b64decode(url).decode('utf-8')
         
@@ -66,7 +67,10 @@ def make_prediction():
             img = Image.open(BytesIO(r))
 
 
-        img=np.asanyarray(img.resize((150,150))) / 255
+        img=np.asanyarray(img.resize((150,150)))/255
+        # img = np.array(img)
+        # img = cv2.resize(img,(150,150))
+        # img = np.reshape(img,[1,150,150,3])
         
        
         # reshape to shape that tensorflow expects
@@ -89,25 +93,26 @@ def make_prediction():
             "instances": [img.tolist()]
         }
 
-
         # pass uploaded image to Tensorflow model for detection
         pred = model.predict(img)
+        print(pred)
+        # print(pred)
         ch = np.argmax(pred)
         
         pred = pred[0][np.argmax(pred)]
 
-        # ch = np.argmax(pred)
+        ch = np.argmax(pred)
 
         if (ch==0):
             sign = "Bloody scene"
         elif (ch==1):
-            sign ="Guns"
+            sign ="Injaries"
         elif (ch==2):
-            sign = "Injury"
+            sign = "Weapons"
         elif (ch==3):
-            sign = "Knifes"
-   
-        if pred > 0.37:
+            sign = "Normal"
+        print(pred)
+        if pred > 0.75:
             return {
                 'isBlur': 1,
                 'sign': sign,
