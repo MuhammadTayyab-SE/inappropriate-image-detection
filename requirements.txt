@@ -1,0 +1,12 @@
+Flask
+flask_cors
+keras
+tensorflow
+keras
+numpy
+matplotlib
+opencv-python
+Pillow
+colorama
+requests
+sendgrid
